@@ -1,0 +1,10 @@
+/vendor/
+/config/config.php
+/storage/certificates/*
+/storage/qrcodes/*
+/storage/logs/*
+!.gitkeep
+.DS_Store
+Thumbs.db
+*.log
+.env

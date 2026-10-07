@@ -1,0 +1,203 @@
+:root {
+    --ink: #092541;
+    --muted: #4d6680;
+    --brand: #f26a21;
+    --brand-dark: #c94b0b;
+    --blue: #1769aa;
+    --line: #d6e3ef;
+    --canvas: #fbfdff;
+    --soft-blue: #eef5fb;
+    --bs-primary: #f26a21;
+    --bs-primary-rgb: 242, 106, 33;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--ink);
+    background:
+        radial-gradient(ellipse at 8% 0%, rgba(23, 105, 170, .06), transparent 34%),
+        var(--canvas);
+    font-family: "DM Sans", "Segoe UI", sans-serif;
+    font-size: .97rem;
+    line-height: 1.65;
+}
+
+main { flex: 1; }
+h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
+    font-family: "Space Grotesk", "DM Sans", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { color: var(--ink); font-weight: 700; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.55rem); letter-spacing: -.04em; line-height: 1.08; }
+
+.app-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background: rgba(255, 255, 255, .97);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 5px 18px rgba(9, 37, 65, .045);
+    backdrop-filter: blur(14px);
+}
+.app-navbar-inner { min-height: 78px; }
+.app-navbar .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .7rem;
+    margin: 0;
+    padding: .45rem 0;
+    color: var(--ink);
+}
+.brand-mark {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--ink);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    box-shadow: inset 0 -3px 0 var(--brand);
+}
+.brand-copy { display: grid; line-height: 1.15; text-align: left; }
+.brand-name { font-size: 1.05rem; letter-spacing: -.025em; }
+.brand-caption {
+    margin-top: .22rem;
+    color: var(--muted);
+    font-family: "DM Sans", sans-serif;
+    font-size: .69rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+.app-nav-actions { flex-wrap: wrap; justify-content: flex-end; }
+.app-nav-actions form { display: flex; }
+
+.container { max-width: 1180px; }
+.portal-eyebrow {
+    margin-bottom: .55rem;
+    color: var(--brand-dark);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+.portal-login-card { border-top: 3px solid var(--brand); }
+.card, .certificate-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(9, 37, 65, .055);
+}
+.card { background: rgba(255, 255, 255, .97); }
+.certificate-card { padding: 2rem; background: #fff; }
+.verify-shell { max-width: 760px; margin: 1rem auto 0; }
+.verify-shell > .text-center:first-child { margin-bottom: 2rem !important; }
+.verify-shell .card { border-top: 3px solid var(--brand); }
+.status-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    box-shadow: 0 0 0 7px rgba(23, 105, 170, .09);
+}
+.qr-preview { max-width: 220px; width: 100%; }
+.stat-number {
+    color: var(--ink);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+.table { --bs-table-bg: transparent; margin-bottom: 0; }
+.table td, .table th { vertical-align: middle; padding: .8rem .65rem; }
+.table thead th {
+    color: var(--muted);
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .065em;
+    text-transform: uppercase;
+}
+.table tbody tr:hover { --bs-table-bg: rgba(23, 105, 170, .045); }
+.form-control, .form-select {
+    min-height: 44px;
+    border-color: #c5d6e5;
+    border-radius: 4px;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 .2rem rgba(23, 105, 170, .15);
+}
+.btn {
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: .01em;
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background: var(--brand-dark);
+    border-color: var(--brand-dark);
+    color: #fff;
+    box-shadow: 0 7px 18px rgba(242, 106, 33, .2);
+}
+.btn-outline-primary { color: var(--brand-dark); border-color: var(--brand); }
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+.btn-outline-secondary { color: var(--blue); border-color: #9dbbd4; }
+.btn-outline-secondary:hover, .btn-outline-secondary:focus {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+}
+.text-muted { color: var(--muted) !important; }
+a:not(.btn) { color: var(--blue); }
+a:not(.btn):hover { color: var(--brand-dark); }
+:focus-visible { outline: 3px solid #f5b66a; outline-offset: 3px; }
+
+footer {
+    border-top: 0 !important;
+    background: linear-gradient(130deg, #061a31 0%, #0b3561 100%);
+    color: rgba(255, 255, 255, .72);
+}
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.footer-brand { color: #fff; font-family: "Space Grotesk", sans-serif; font-weight: 700; }
+.footer-tagline, .footer-note { font-size: .84rem; }
+.footer-tagline { color: rgba(255, 255, 255, .66); }
+.footer-note { text-align: right; }
+
+@media (max-width: 575.98px) {
+    .app-navbar-inner { padding-top: .4rem; padding-bottom: .4rem; }
+    .app-nav-actions { gap: .35rem !important; }
+    .app-nav-actions .btn { padding: .35rem .55rem; font-size: .75rem; }
+    main.container { padding-top: 1.5rem !important; }
+    .certificate-card { padding: 1.25rem; }
+    .verify-shell { margin-top: .5rem; }
+    .table td, .table th { padding: .65rem .5rem; }
+    .footer-content { align-items: flex-start; flex-direction: column; }
+    .footer-note { text-align: left; }
+}

@@ -1,0 +1,20 @@
+Options -Indexes
+DirectoryIndex index.php
+
+RewriteEngine On
+
+# Protect sensitive directories.
+RewriteRule ^(config|database|includes|vendor)/ - [F,L,NC]
+RewriteRule ^storage/(logs|certificates|qrcodes)/ - [F,L,NC]
+
+# Allow direct access to admin directory
+RewriteRule ^admin/.*\.php$ - [L]
+
+# Allow direct access to public directory
+RewriteRule ^public/.*\.php$ - [L]
+
+# Public certificate verification route.
+RewriteRule ^c/([A-Za-z0-9]{64})/?$ public/c.php?token=$1 [L,QSA]
+
+# Root verification page.
+RewriteRule ^$ public/index.php [L]
